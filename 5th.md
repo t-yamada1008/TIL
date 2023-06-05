@@ -10,10 +10,10 @@
     - [apatch2-utils単体だとapt-get installできない？](#apatch2-utils単体だとapt-get-installできない)
     - [tar.gzになってるモジュールをインストールする方法ってある？](#targzになってるモジュールをインストールする方法ってある)
     - [whereis でフルパスって出せる？](#whereis-でフルパスって出せる)
-    - [tarで解凍したhttpd-2.2.29をどこに置くかわからなくて。現開発環境ではどこにあるのか調べたくなった。](#tarで解凍したhttpd-2229をどこに置くかわからなくて現開発環境ではどこにあるのか調べたくなった)
+    - [tarで解凍したhttpd-2.2.29をどこに置くかわからなくて。現開発環境ではどこにあるのか調べたくなった](#tarで解凍したhttpd-2229をどこに置くかわからなくて現開発環境ではどこにあるのか調べたくなった)
     - [vsftpdってなに](#vsftpdってなに)
-    - [PREFIX/bin/apachectl startってINSTALLにある。なんだろう。](#prefixbinapachectl-startってinstallにあるなんだろう)
-    - [makeできない。apt-getもデータベースに存在するが利用できないという。](#makeできないapt-getもデータベースに存在するが利用できないという)
+    - [PREFIX/bin/apachectl startってINSTALLにある。なんだろう](#prefixbinapachectl-startってinstallにあるなんだろう)
+    - [makeできない。apt-getもデータベースに存在するが利用できないという](#makeできないapt-getもデータベースに存在するが利用できないという)
     - [build essentialはパッケージが見つかりませんときた](#build-essentialはパッケージが見つかりませんときた)
     - [sudo apt-get updateって安全なの？railsのbundle updateでハマったことがあるから不安](#sudo-apt-get-updateって安全なのrailsのbundle-updateでハマったことがあるから不安)
     - [sudo apt-get updateは無視とエラーと取得に失敗しましたばかりでる](#sudo-apt-get-updateは無視とエラーと取得に失敗しましたばかりでる)
@@ -159,7 +159,7 @@ ls: /bin/ls /usr/share/man/man1/ls.1.gz
 
 したがって、whereisコマンドはフルパスを表示します。ただし、whereisコマンドはシステムの標準パスにあるファイルしか見つけられないため、その他の場所にあるファイルを探すにはfindやlocateコマンドを使用することを検討してみてください。
 
-### tarで解凍したhttpd-2.2.29をどこに置くかわからなくて。現開発環境ではどこにあるのか調べたくなった。
+### tarで解凍したhttpd-2.2.29をどこに置くかわからなくて。現開発環境ではどこにあるのか調べたくなった
 
 tarで解凍したhttpd-2.2.29（Apache HTTP Server）のソースコードの配置場所は、基本的にはあなたが選択することができます。一般的には、ユーザのホームディレクトリや /usr/local/src のような場所に置かれます。これはビルド作業を行うための一時的な場所で、完成したバイナリは通常 /usr/local/apache2 にインストールされます（デフォルトの設定に従った場合）。
 
@@ -194,7 +194,7 @@ sudo make install
 PREFIX/bin/apachectl start
 ```
 
-### PREFIX/bin/apachectl startってINSTALLにある。なんだろう。
+### PREFIX/bin/apachectl startってINSTALLにある。なんだろう
 
 この手順はソースコードからApache HTTP Serverをビルドしてインストールするための一般的な手順です。それぞれのコマンドの役割は以下の通りです：
 
@@ -208,7 +208,7 @@ PREFIX/bin/apachectl start : ここで、PREFIXは先程の./configure --prefix=
 
 この手順を通じてApache HTTP Serverをソースコードからビルドし、システムにインストールすることができます。
 
-### makeできない。apt-getもデータベースに存在するが利用できないという。
+### makeできない。apt-getもデータベースに存在するが利用できないという
 
 makeコマンドが利用できない、またはapt-getでパッケージがデータベースに存在するが利用できないというエラーはいくつかの原因で発生する可能性があります。
 
@@ -221,7 +221,6 @@ makeコマンドが利用できない、またはapt-getでパッケージがデ
 依存関係の解決：ソースコードのビルドに必要な依存関係が足りない可能性もあります。ソースコードのドキュメンテーションやREADMEファイルで必要な依存関係を確認し、それらがすべてインストールされていることを確認してください。
 
 これらの手順を試した上で、まだ問題が解決しない場合は、エラーメッセージの具体的な内容をもとに追加のトラブルシューティングを行う必要があります。エラーメッセージの詳細を提供していただければ、更に具体的なアドバイスを提供することが可能です。
-
 
 ### build essentialはパッケージが見つかりませんときた
 
