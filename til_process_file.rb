@@ -6,7 +6,8 @@ def til_process_file(file_name)
     /ChatGPT/ => "\n",
     /User/ => "\n",
     /Copy code/ => "\n",
-    /bash/ => "```bash\n"
+    # ケースバイケースのためにコメントアウト
+    # /bash/ => "```bash\n"
   }
 
   replacements.each do |pattern, replacement|
