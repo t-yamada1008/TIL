@@ -2,10 +2,12 @@ def til_process_file(file_name)
   file = File.read(file_name)
 
   replacements = {
+    # 文字列後の改行までを含めるように修正
+    /ChatGPT\n/ => "",
+    /User\n/ => "",
+    /Copy code\n/ => "",
+    # 改行削除は最後に一括
     /\n+/ => "\n",
-    /ChatGPT/ => "\n",
-    /User/ => "\n",
-    /Copy code/ => "\n",
     # ケースバイケースのためにコメントアウト
     # /bash/ => "```bash\n"
   }
