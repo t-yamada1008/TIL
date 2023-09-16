@@ -1,4 +1,4 @@
-# nil?, blank?, empty?, present?
+# nil?, empty?, blank?, present?
 
 ## `nil?` と `blank?` の違いについて
 
