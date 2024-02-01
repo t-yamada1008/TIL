@@ -1,0 +1,2 @@
+# Convention over Configuration
+Railsは「設定より規約」（Convention over Configuration）を採用しています。これは、標準的な命名規則に従って開発を進めることで、設定作業を最小限に抑えられるという原則です。たとえば、モデル名が単数形ならテーブル名は複数形であるべき、といった規約があります
