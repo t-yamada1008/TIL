@@ -1,2 +1,13 @@
+# 環境構築記録用のzshrc
+## .zshrcに転写すること
+
+# rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
+
+# zplug
+export ZPLUG_HOME=/usr/local/opt/zplug
+source $ZPLUG_HOME/init.zsh
+
+# z
+zplug "agkozak/zsh-z"
