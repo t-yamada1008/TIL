@@ -172,3 +172,96 @@ x <= y	xはy以下
 !(条件式)	条件式の結果の反転	条件式が偽
 条件式1 && 条件式2	条件式1が真 かつ 条件式2が真	条件式1と条件式2のどちらも真
 条件式1 || 条件式2	条件式1が真 または 条件式2が真	条件式1と条件式2の少なくとも片方が真
+
+## H - 1.07.条件式の結果とbool型
+
+キーポイント
+条件式の結果は真のとき1に、偽のとき0になる
+1をtrueで、0をfalseで表す
+bool型はtrueとfalseだけが入る型
+int型の表現	bool型の表現
+真	1	true
+偽	0	false
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+  // 変数a,b,cにtrueまたはfalseを代入してAtCoderと出力されるようにする。
+  bool a = true  // true または false
+  bool b = true  // true または false
+  bool c = false // true または false
+
+  // ここから先は変更しないこと
+
+  if (a) {
+    cout << "At";
+  }
+  else {
+    cout << "Yo";
+  }
+
+  if (!a && b) {
+    cout << "Bo";
+  }
+  else if (!b || c) {
+    cout << "Co";
+  }
+
+  if (a && b && c) {
+    cout << "foo!";
+  }
+  else if (true && false) {
+    cout << "yeah!";
+  }
+  else if (!a || c) {
+    cout << "der";
+  }
+
+  cout << endl;
+}
+
+I - 1.08.変数のスコープ
+
+キーポイント
+{ }で囲われた部分のところをブロックという
+変数が使える範囲のことをスコープという
+変数のスコープは「変数が宣言されてからそのブロックが終わるまで」
+スコープが重なっている場合は最も内側のブロックで宣言された変数が選ばれる
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+  int p;
+  int price;
+  string text;
+
+  cin >> p;
+
+  // パターン1
+  if (p == 1) {
+    int price;
+    cin >> price;
+  }
+
+  // パターン2
+  if (p == 2) {
+    cin >> text >> price;
+
+    int N;
+    cin >> N;
+  }
+
+  cout << text << "!" << endl;
+  cout << price * N << endl;
+}
+
+## J - 1.09.複合代入演算子
+
+キーポイント
+x = x + yはx += yのように短く書ける
+x += 1はx++と書ける（インクリメント）
+x -= 1はx--と書ける（デクリメント）
+
+## K - 1.10.while文
