@@ -58,6 +58,7 @@ In this example, createFunction() returns a new function. Then that function can
 Function Hoisting
 JavaScript has a feature called hoisting where a function can sometimes be used before it is initialized. You can only do this if you declare functions with the function syntax.
 
+```javascript
 function createFunction() {
     return f;
     function f(a, b) {
@@ -67,11 +68,14 @@ function createFunction() {
 }
 const f = createFunction();
 console.log(f(3, 4)); // 7
+```
+
 In this example, the function is returned before it is initialized. Although it is valid syntax, it is sometimes considered bad practice as it can reduce readability.
 
 Closures
 An important topic in JavaScript is the concept of closures. When a function is created, it has access to a reference to all the variables declared around it, also known as it's lexical environment. The combination of the function and its enviroment is called a closure. This is a powerful and often used feature of the language.
 
+```javascript
 function createAdder(a) {
     function f(b) {
         const sum = a + b;
@@ -81,6 +85,8 @@ function createAdder(a) {
 }
 const f = createAdder(3);
 console.log(f(4)); // 7
+```
+
 In this example, createAdder passes the first parameter a and the inner function has access to it. This way, createAdder serves as a factory of new functions, with each returned function having different behavior.
 
 Arrow Syntax
