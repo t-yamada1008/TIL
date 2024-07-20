@@ -3,7 +3,19 @@
 #
 # Return the running sum of nums.
 
-# まだ書いてない
+# @param {Integer[]} nums
+# @return {Integer[]}
+
+def running_sum(nums)
+  sum = 0
+  result = []
+  nums.each do|num|
+      sum = sum + num
+      result << sum
+  end
+
+  result
+end
 
 # Example 1:
 #
@@ -25,3 +37,11 @@
 #
 # 1 <= nums.length <= 1000
 # -10^6 <= nums[i] <= 10^6
+
+# 別回答
+def running_sum(nums)
+  (1...nums.length).each do |i|
+    nums[i] += nums[i - 1]
+  end
+  nums
+end
