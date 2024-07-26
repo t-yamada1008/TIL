@@ -15,61 +15,38 @@ def check_tree(root)
   root.val == root.left.val + root.right.val ? true : false
 end
 
+# 2236. Root Equals Sum of Childrenの問題は、与えられた二分木のルートノードの値が、その左右の子ノードの値の合計と等しいかどうかを確認するものです。
+
+# 問題の説明
+# - 二分木のルートノードが与えられます。
+# - ルートノードの値が、その左子ノードと右子ノードの値の合計と等しいかどうかを判定します。
+
+# 制約
+# - 二分木はルートノードとその左右の子ノードのみを含みます。
+# - 各ノードの値は整数です。
+
 # 解説
-# #もちろんです。`TreeNode`クラスについて、以下に詳細な解説を行います。
+# 1. TreeNodeクラスの定義:
 
-# ### クラス定義
+# - TreeNodeクラスは、二分木のノードを表します。
+# - 各ノードは、値val、左子ノードleft、右子ノードrightを持ちます。
+# - initializeメソッドでノードを初期化します。
 
-# ```ruby
-# class TreeNode
-#   attr_accessor :val, :left, :right
-#   def initialize(val = 0, left = nil, right = nil)
-#     @val = val
-#     @left = left
-#     @right = right
-#   end
-# end
-# ```
+# 2. check_treeメソッド:
 
-# #### クラスの構造
-# 1. **クラス名**: `TreeNode`
-#     - このクラスは、二分木（バイナリツリー）のノードを表すために使われます。
+# - check_treeメソッドは、ルートノードrootを引数として受け取り、ブール値を返します。
+# - root.val == root.left.val + root.right.val:
+# - ルートノードの値root.valが、左子ノードの値root.left.valと右子ノードの値root.right.valの合計と等しいかどうかを確認します。
+# - ? true : false:
+# - 条件が真ならtrueを返し、偽ならfalseを返します。
 
-# 2. **`attr_accessor`**
-#     - `attr_accessor`は、クラス内のインスタンス変数に対するゲッターとセッターを自動的に生成するメソッドです。
-#     - この例では、`val`, `left`, `right`の3つのインスタンス変数に対してゲッターとセッターが生成されています。
+# 例
+# 例えば、以下のような二分木が与えられた場合：
+#   10
+#  /  \
+# 4    6
 
-# 3. **`initialize`メソッド**
-#     - `initialize`メソッドは、クラスのインスタンスが生成される際に自動的に呼び出されるコンストラクタです。
-#     - このメソッドは、3つの引数を取ります：
-#         - `val`: ノードの値を表します。デフォルト値は`0`です。
-#         - `left`: 左の子ノードを指します。デフォルト値は`nil`です。
-#         - `right`: 右の子ノードを指します。デフォルト値は`nil`です。
-#     - インスタンスが生成されると、これらの引数がインスタンス変数（`@val`, `@left`, `@right`）に設定されます。
-
-# #### インスタンス変数
-# - **`@val`**: ノードの値を保持します。
-# - **`@left`**: 左の子ノードを指します。これは`TreeNode`のインスタンスか、子ノードが存在しない場合は`nil`です。
-# - **`@right`**: 右の子ノードを指します。これは`TreeNode`のインスタンスか、子ノードが存在しない場合は`nil`です。
-
-# #### 例
-
-# ```ruby
-# # 新しいTreeNodeのインスタンスを作成
-# node = TreeNode.new(1)
-
-# # 属性にアクセス
-# puts node.val   # => 1
-# puts node.left  # => nil
-# puts node.right # => nil
-
-# # 左右の子ノードを設定
-# node.left = TreeNode.new(2)
-# node.right = TreeNode.new(3)
-
-# # 子ノードの値にアクセス
-# puts node.left.val  # => 2
-# puts node.right.val # => 3
-# ```
-
-# この例では、`TreeNode`クラスを使用して二分木のノードを作成し、それぞれのノードの値や子ノードにアクセス、設定しています。`attr_accessor`を使うことで、`val`, `left`, `right`のインスタンス変数に対して簡単にアクセスできるようになっています。
+# ルートノードの値は10です。
+# 左子ノードの値は4、右子ノードの値は6です。
+# 4 + 6 = 10なので、check_treeメソッドはtrueを返します。
+# このコードは、与えられた二分木のルートノードの値が、その左右の子ノードの値の合計と等しいかどうかを効率的に確認します。
