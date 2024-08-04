@@ -18,3 +18,12 @@
 # Constraints:
 # 1 <= str1.length, str2.length <= 1000
 # str1 and str2 consist of English uppercase letters.
+
+# @param {String} str1
+# @param {String} str2
+# @return {String}
+def gcd_of_strings(str1, str2)
+  return "" if str1 + str2 != str2 + str1
+  return str1 if str1 == str2
+  return str1[0...gcd(str1.length, str2.length)]
+end
