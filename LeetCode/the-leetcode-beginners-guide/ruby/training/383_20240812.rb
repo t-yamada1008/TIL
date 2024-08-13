@@ -26,22 +26,22 @@
 # @param {String} magazine
 # @return {Boolean}
 def can_construct(ransom_note, magazine)
-  magazine_chars = magazine.chars.tally
-  ransom_note.chars.each do |c|
-    return false if magazine_chars[c].nil? || magazine_chars[c] == 0
-    magazine_chars[c] -= 1
+  ransom_note.chars.each do |char|
+    return false if magazine.sub!(char, "").nil?
   end
   true
 end
 
-# 引数のチェック
-if ARGV.length != 2
-  puts "Usage: ruby 383_20240812.rb <ransom_note> <magazine>"
-  exit 1
+# assert メソッドの定義
+def assert(actual, expected)
+  if actual == expected
+    puts "Test passed"
+  else
+    puts "Test failed: expected #{expected}, got #{actual}"
+  end
 end
 
-ransom_note = ARGV[0]
-magazine = ARGV[1]
-
-# 結果を表示
-puts can_construct(ransom_note, magazine)
+# Test
+assert(can_construct("a", "b"), false)
+assert(can_construct("aa", "ab"), false)
+assert(can_construct("aa", "aab"), true)
