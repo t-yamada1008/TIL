@@ -39,4 +39,23 @@
 # @return {Integer}
 
 def number_of_steps(num)
+  steps = 0
+  while num > 0
+	if num.even?
+	  num /= 2
+	else
+	  num -= 1
+	end
+	steps += 1
+  end
+  steps
 end
+
+# 解説
+# - number_of_steps関数は、整数numを引数として受け取り、0にするためのステップ数を返します。
+# - steps変数を初期化してステップ数をカウントします。
+# - whileループ内で、numが0になるまで繰り返します。
+# 	- numが偶数なら2で割り、奇数なら1を引きます。
+# 	- ステップをカウントします。
+# - 最終的にステップ数を返します。
+# このコードは、与えられた整数を0にするために必要なステップ数を正確に計算します。

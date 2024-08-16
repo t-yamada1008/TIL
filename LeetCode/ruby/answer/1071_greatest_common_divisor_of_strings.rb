@@ -25,4 +25,15 @@
 # @param {String} str2
 # @return {String}
 def gcd_of_strings(str1, str2)
+  # もし str1 + str2 が str2 + str1 と等しくない場合、共通のパターンは存在しない
+  return "" if str1 + str2 != str2 + str1
+
+  # 文字列の長さの最大公約数を求め、その長さまでの部分文字列を返す
+  gcd_length = gcd(str1.length, str2.length)
+  str1[0...gcd_length]
+end
+
+# 最大公約数を求めるためのヘルパーメソッド
+def gcd(a, b)
+  b == 0 ? a : gcd(b, a % b)
 end
