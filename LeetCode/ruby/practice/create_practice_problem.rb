@@ -3,8 +3,8 @@
 
 require 'time'
 
-# 問題ディレクトリのパスを取得
-problem_dir = "#{Dir.pwd}/problem"
+# 1つ上の階層にある問題ディレクトリのパスを取得
+problem_dir = File.expand_path('../problem', __dir__)
 
 # 問題ディレクトリ内のファイルを取得
 problem_files = Dir.glob("#{problem_dir}/*")
@@ -21,7 +21,7 @@ problem_file = problem_files.find { |file| file.match?(/#{problem_number}/) }
 # ファイルパスから新しいファイル名を作成
 # ex: TIL/LeetCode/ruby/problem/383_ransom_note.rb -> 20240812_ransom_note.rb
 new_file_name = "#{Time.now.strftime('%Y%m%d')}_#{File.basename(problem_file)}"
-new_file_path = "#{Dir.pwd}/practice/#{new_file_name}"
+new_file_path = "#{Dir.pwd}/#{new_file_name}"
 
 # ファイルの中身を読み込む
 problem_code = File.read(problem_file)
@@ -36,9 +36,16 @@ end
 
 puts "Created file: #{new_file_path}"
 
-# テストケースを作成
+# テストを作成
 test_code = <<~TEST
-  # assert メソッドの定義
+  # testcaseを作成
+  testcases = [
+    {actual: , expected: },
+    {actual: , expected: },
+    {actual: , expected: }
+  ]
+
+  # assertメソッドの定義
   def assert(actual, expected)
     if actual == expected
       puts "Test passed"
@@ -47,13 +54,7 @@ test_code = <<~TEST
     end
   end
 
-  # test
-  testcases = [
-    {actual: '', expected: ''},
-    {actual: '', expected: ''},
-    {actual: '', expected: ''}
-  ]
-
+  # テストケースを実行
   testcases.each do |testcase|
     assert(sample_function(testcase[:actual], testcase[:expected]))
   end
