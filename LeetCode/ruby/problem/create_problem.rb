@@ -1,4 +1,8 @@
 def title_to_snake_case(title)
+
+  # .を_に変換
+  title = title.gsub('.', '_')
+
   # 数字とタイトルを分ける
   number, title_part = title.split(' ', 2)
 
@@ -9,13 +13,11 @@ def title_to_snake_case(title)
   number + snake_case_title
 end
 
-if ARGV.length != 1
-  puts "Usage: #{$0} \"<LeetCode problem title>\""
-  exit 1
-end
+# 一旦処理を止めて問題名を入力
+puts 'Enter the title of the problem: '
+title = gets.chomp
 
-title = ARGV[0]
-snake_case_title = title_to_camel_case(title)
+snake_case_title = title_to_snake_case(title)
 
 # ファイル名を作成
 file_name = "#{Dir.pwd}/#{snake_case_title}.rb"
