@@ -1,16 +1,8 @@
 def title_to_snake_case(title)
 
-  # .を_に変換
-  title = title.gsub('.', '_')
-
-  # 数字とタイトルを分ける
-  number, title_part = title.split(' ', 2)
-
-  # タイトルをスペースで分割し、各単語をスネークケースに変換
-  snake_case_title = title_part.split(' ').map(&:downcase).join('_')
-
-  # 数字とスネークケースに変換したタイトルを結合
-  number + snake_case_title
+  # タイトルを変換
+  # EX: 605. Can Place Flowers -> 605_can_place_flowers
+  title.delete('.').downcase.gsub!(/ /, '_')
 end
 
 # 一旦処理を止めて問題名を入力
@@ -29,3 +21,6 @@ File.open(file_name, 'w') do |file|
 end
 
 puts "Created file: #{file_name}"
+
+# ファイルを開く
+system("code #{file_name}")
