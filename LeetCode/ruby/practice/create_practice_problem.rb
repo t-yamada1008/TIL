@@ -56,7 +56,7 @@ test_code = <<~TEST
 
   # テストケースを実行
   testcases.each do |testcase|
-    assert(sample_function(testcase[:actual], testcase[:expected]))
+    assert(sample_function(testcase[:actual]), testcase[:expected])
   end
 TEST
 
