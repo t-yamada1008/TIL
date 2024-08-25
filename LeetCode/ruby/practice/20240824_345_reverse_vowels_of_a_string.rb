@@ -24,9 +24,8 @@ end
 
 # testcaseを作成
 testcases = [
-  {actual: , expected: },
-  {actual: , expected: },
-  {actual: , expected: }
+  {actual: "hello", expected: "holle"},
+  {actual: "leetcode", expected: "leotcede"},
 ]
 
 # assertメソッドの定義
@@ -40,5 +39,5 @@ end
 
 # テストケースを実行
 testcases.each do |testcase|
-  assert(sample_function(testcase[:actual], testcase[:expected]))
+  assert(reverse_vowels(testcase[:actual]), testcase[:expected])
 end
