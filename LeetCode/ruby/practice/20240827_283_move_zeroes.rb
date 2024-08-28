@@ -18,12 +18,14 @@
 # @param {Integer[]} nums
 # @return {Void} Do not return anything, modify nums in-place instead.
 def move_zeroes(nums)
-  nums.each_with_index do |num, i|
-    if num == 0
-      nums.delete_at(i)
-      nums.push(0)
-    end
-  end
+  # numsから0の数を取得
+  zero_count = nums.count(0)
+  # numsから0を削除
+  nums.delete(0)
+  # numsの末尾にzero_count個の0を追加
+  zero_count.times { nums.push(0) }
+  # numsを返す
+  nums
 end
 
 # testcaseを作成
