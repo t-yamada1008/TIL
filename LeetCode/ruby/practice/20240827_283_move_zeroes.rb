@@ -18,6 +18,12 @@
 # @param {Integer[]} nums
 # @return {Void} Do not return anything, modify nums in-place instead.
 def move_zeroes(nums)
+  nums.each_with_index do |num, i|
+    if num == 0
+      nums.delete_at(i)
+      nums.push(0)
+    end
+  end
 end
 
 # testcaseを作成
