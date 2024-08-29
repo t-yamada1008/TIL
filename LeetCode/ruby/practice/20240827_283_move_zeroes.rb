@@ -30,9 +30,8 @@ end
 
 # testcaseを作成
 testcases = [
-  {actual: , expected: },
-  {actual: , expected: },
-  {actual: , expected: }
+  {actual: [0,1,0,3,12], expected: [1,3,12,0,0]},
+  {actual: [0], expected: [0]},
 ]
 
 # assertメソッドの定義
@@ -46,5 +45,5 @@ end
 
 # テストケースを実行
 testcases.each do |testcase|
-  assert(sample_function(testcase[:actual]), testcase[:expected])
+  assert(move_zeroes(testcase[:actual]), testcase[:expected])
 end
